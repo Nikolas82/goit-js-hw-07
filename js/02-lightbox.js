@@ -1,11 +1,11 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
+// console.log(galleryItems);
 
 const galleryEl = document.querySelector(".gallery")
 
-console.log(galleryEl)
+// console.log(galleryEl)
 
 const createGallery = createGalleryMarkup();
 
@@ -30,3 +30,11 @@ function createGalleryMarkup(){
 }
 
 galleryEl.insertAdjacentHTML('beforeend', createGallery)
+
+
+
+
+
+
+
+const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250, });
