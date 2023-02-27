@@ -30,6 +30,8 @@ function createGalleryMarkup() {
 
 galleryEl.insertAdjacentHTML("beforeend", createGallery);
 
+
+
 galleryEl.addEventListener("click", (e) => {
   e.preventDefault();
   if (e.target.nodeName !== "IMG") {
@@ -41,4 +43,18 @@ galleryEl.addEventListener("click", (e) => {
 `);
 
   instance.show();
+
+  function handledEsc(e) {
+    console.log(e.code);
+
+    if (e.code === "Escape") {
+      instance.close();
+    }
+
+    if (instance.close()) {
+      galleryEl.removeEventListener("keydown", handledEsc);
+    }
+  }
+
+  galleryEl.addEventListener("keydown", handledEsc);
 });
